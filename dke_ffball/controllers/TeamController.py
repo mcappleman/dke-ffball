@@ -1,6 +1,5 @@
 """Imports"""
 from flask import jsonify, request
-from flask_sqlalchemy import SQLAlchemy
 from dke_ffball.models.Team import Team
 from dke_ffball import app, db
 from dke_ffball.errors import BadRequest
@@ -63,12 +62,12 @@ def update_team(team_id):
 
     if team_id is None:
         raise BadRequest('No Team Id was supplied.', status_code=400)
-    
+
     data = request.get_json()
 
     if data['name'] is None:
         raise BadRequest('You did not supply a team name.', status_code=400)
-    
+
     team = Team.query.filter_by(_id=team_id).first()
     team.name = data['name']
     db.session.commit()

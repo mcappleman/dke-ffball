@@ -1,7 +1,7 @@
 {
   "name": "dke-ffball",
   "scripts": {
-    "postdeploy": "cd dke_ffball/ && python manage.py db upgrade"
+    "postdeploy": "python manage.py db upgrade"
   },
   "env": {
     "APP_SETTINGS": {

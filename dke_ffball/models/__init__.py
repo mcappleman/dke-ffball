@@ -1,6 +1,6 @@
 """Imports"""
-import datetime
-from app import db
+from datetime import datetime
+from dke_ffball import db
 
 class BaseModel(db.Model):
     """Base Model to be extended by every model"""

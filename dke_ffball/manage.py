@@ -2,7 +2,7 @@
 from os import environ
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from app import app, db
+from dke_ffball import app, db
 
 app.config.from_object(environ.get('APP_SETTINGS', 'config.DevelopmentConfig'))
 

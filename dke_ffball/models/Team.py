@@ -1,6 +1,6 @@
 """Imports"""
-from app import db
-from models import BaseModel
+from dke_ffball import db
+from dke_ffball.models import BaseModel
 
 
 class Team(BaseModel, db.Model):

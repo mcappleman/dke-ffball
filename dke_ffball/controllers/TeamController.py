@@ -1,12 +1,14 @@
 """Imports"""
 from flask import jsonify, request
+from flask_sqlalchemy import SQLAlchemy
 from dke_ffball.models.Team import Team
 from dke_ffball import app, db
+
 
 @app.route('/api/team', methods=['GET'])
 def get_all_teams():
     """Get all the teams from the database and return them as json"""
-    teams = db.session.query(Team).all()
+    teams = Team.query.all()
     return jsonify(
         status=200,
         message='Got the teams',
@@ -28,4 +30,4 @@ def add_team():
         status=201,
         message='%s has been created' % (team.name),
         data=team
-        )
+    )

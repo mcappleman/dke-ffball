@@ -10,6 +10,7 @@ app.config.from_object(environ.get('APP_SETTINGS', 'config.DevelopmentConfig'))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+import dke_ffball.errors
 import dke_ffball.views
 import dke_ffball.controllers
 import dke_ffball.controllers.TeamController

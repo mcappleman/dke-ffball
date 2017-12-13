@@ -1,4 +1,5 @@
 """Imports"""
+from flask import jsonify
 from dke_ffball import db
 from dke_ffball.models import BaseModel
 
@@ -19,3 +20,11 @@ class Team(BaseModel, db.Model):
 
     def __repr__(self):
         return '<Team %s, id %s' % (self.name, self._id)
+
+
+    def to_dict(self):
+        data = {
+            'id': self._id,
+            'name': self.name
+        }
+        return data

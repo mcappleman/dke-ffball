@@ -18,6 +18,7 @@ class BadRequest(Exception):
         """Error to Dictionary"""
         res_dict = dict(self.payload or ())
         res_dict['message'] = self.message
+        res_dict['status'] = self.status_code
         return res_dict
 
 

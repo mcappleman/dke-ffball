@@ -56,7 +56,7 @@ def add_team():
     db.session.commit()
 
     body = {
-        'message': '%s has been created' % (team.name),
+        'message': '%s has been created by Sams machine' % (team.name),
         'data': team.to_dict()
     }
     return json_response(body, 201)
@@ -83,3 +83,4 @@ def update_team(team_id):
         'data': team.to_dict()
     }
     return json_response(body, 200)
+
